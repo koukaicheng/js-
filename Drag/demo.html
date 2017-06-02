@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#photo{
+			width: 680px;
+			margin: 100px auto;
+		}
+		#photo ul li{
+			list-style: none;
+			float: left;
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			border: 2px solid transparent;
+		}
+		#photo ul li img{
+			width: 200px;
+			height: 200px;
+			cursor: pointer;
+		}
+	</style>
+	</head>
+	<body>
+		<div id="photo">
+		<ul>
+			<li><img src="images/0.png" alt=""></li>
+			<li><img src="images/1.png" alt=""></li>
+			<li><img src="images/2.png" alt=""></li>
+			<li><img src="images/3.png" alt=""></li>
+			<li><img src="images/4.png" alt=""></li>
+			<li><img src="images/5.png" alt=""></li>
+			<li><img src="images/6.png" alt=""></li>
+			<li><img src="images/7.png" alt=""></li>
+			<li><img src="images/8.png" alt=""></li>
+			
+		</ul>
+	</div>
+    <script src="move.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	var aLi = document.getElementsByTagName("li");
+    	var arr = [];
+    	for(var i =0,l=aLi.length;i++){
+    		 arr.push([aLi[i].offsetLeft,aLi[i].offsetTop]);
+    	}
+    	for(var i =0,l=aLi.length;i++){
+    		 aLi[i].style.position = "absolute";
+    		 aLi[i].style.left = arr[i][0] + "px";
+             aLi[i].style.top = arr[i][1] + "px";
+             aLi[i].style.margin = 0;
+    	}
+    </script>
+	</body>
+</html>

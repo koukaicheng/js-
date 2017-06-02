@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#photo{
+			width: 680px;
+			margin: 100px auto;
+		}
+		#photo ul li{
+			list-style: none;
+			float: left;
+			width: 200px;
+			height: 200px;
+			margin: 10px;
+			border: 2px solid transparent;
+			transition: All linear;
+		}
+		#photo ul li img{
+			width: 200px;
+			height: 200px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id="photo">
+		<ul>
+			<li><img src="images/1.png" alt=""></li>
+			<li><img src="images/2.png" alt=""></li>
+			<li><img src="images/3.png" alt=""></li>
+			<li><img src="images/4.png" alt=""></li>
+			<li><img src="images/5.png" alt=""></li>
+			<li><img src="images/6.png" alt=""></li>
+			<li><img src="images/7.png" alt=""></li>
+			<li><img src="images/8.png" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+		</ul>
+	</div>
+    <script src="move.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//布局
+		// 0.把浮动布局改为定位布局
+		// 1.拖拽的功能
+		// 2.碰撞的检测
+		// 3.计算碰过成功的距离最近的
+		// 4.鼠标抬起之后交换碰撞成功的两个li
+
+		// 0.把浮动布局改为定位布局
+		var aLi  = document.getElementsByTagName("li");
+		var arr = [];//存储li的偏移量
+		var z = 1;
+		
+		for(var i = 0;i<aLi.length;i++){
+          arr.push([aLi[i].offsetLeft,aLi[i].offsetTop]);
+		}
+//		console.log(arr);
+		for(var i = 0;i<aLi.length;i++){
+		  aLi[i].index = i;
+          aLi[i].style.position = "absolute";
+          aLi[i].style.left = arr[i][0] + "px";
+          aLi[i].style.top = arr[i][1] + "px";
+          aLi[i].style.margin = 0;
+
+		}
+		// 1.拖拽的功能
+		for(var i = 0;i<aLi.length;i++){
+          drag(aLi[i]); 
+		}
+		
+		function drag(obj){
+			obj.onmousedown = function(){
+				console.log(this.index);
+				var ev = ev||window.event;
+                var x = ev.clientX;
+                var y = ev.clientY;
+                // 获取li的初始位置
+                var l = this.offsetLeft;
+                var t = this.offsetTop;
+                this.style.zIndex = z++;
+                // 鼠标移动过程中
+                document.onmousemove = function(ev){
+                	var ev = ev||window.event;
+                	// li的新位置
+//              	alert("lllllllllllll")
+                	var _left = ev.clientX - x + l;
+                	var _top = ev.clientY - y + t;
+                	obj.style.left = _left+"px";
+                	obj.style.top = _top + "px";
+                	
+                	//
+                	var oLi = near(obj);
+                	for(var i = 0;i<aLi.length;i++){
+                		aLi[i].style.border = "2px solid transparent";
+                	}
+                	 if(oLi!=''){
+                	 	oLi.style.border = "2px solid red";
+                	 }
+//                   console.log(oli);
+                };
+                document.onmouseup  = function(){
+                	 document.onmousemove = null;
+                	 document.onmouseup  = null;
+                	 var oLi = near(obj);
+                	 
+                	 if(oLi!=''){
+             	 	move(oLi,{left:arr[obj.index][0],top:arr[obj.index][1]});
+             	 	move(obj,{left:arr[oLi.index][0],top:arr[oLi.index][1]});
+                        // oLi.style.left = arr[obj.index][0]+"px";
+                        // oLi.style.top = arr[obj.index][1]+"px";
+                        // obj.style.left = arr[oLi.index][0]+"px";
+                        // obj.style.top = arr[oLi.index][1]+"px";
+                	 	oLi.style.border = "2px solid transparent";
+                	 	var temp = 0;
+                	 	temp = obj.index;
+                	 	obj.index = oLi.index;
+                	 	oLi.index = temp;
+                	 	console.log(oLi.index+obj.index )
+                	 	
+                	 }else{
+                	 	move(obj,{left:arr[obj.index][0],top:arr[obj.index][1]});
+                	 }
+                	
+                };
+                 return false
+			}
+		}
+		//2.碰撞检测
+		function impact(obj1,obj2){
+			//获取每个li的偏移值
+			var l1 = obj1.offsetLeft,
+			    R1 = l1+obj1.offsetWidth,
+			    T1 = obj1.offsetTop,
+			    B1 = T1+obj1.offsetHeight;
+			    
+			var l2 = obj2.offsetLeft,
+			    R2 = l1+obj2.offsetWidth,
+			    T2 = obj2.offsetTop,
+			    B2 = T1+obj2.offsetHeight;
+			if( R1<l2 || B1<T2 || T1>B2 || l1>R2 ){
+				//不成功
+//				console.log("no");/
+				 return false;
+			}else{
+				//成功
+//				console.log("yes");
+				 return true;
+			}
+		}
+		//计算最小距离
+		function near(obj){
+			var n = 10000;
+			var oLi = '';
+			for(var i = 0;i<aLi.length;i++){
+                if(impact(obj,aLi[i]) && obj!=aLi[i]){
+//               aLi[i].style.border = "2px solid red"
+                 //比较出距离最近的LI
+                 var c = distance(obj,aLi[i]);
+                 if(c < n){
+                 	n = c;
+                 	oLi = aLi[i];
+                 }
+                };	
+           };
+           return oLi;
+		}
+		
+		
+		//勾股定理计算斜边长度
+		function distance(obj1,obj2){
+			var a = obj1.offsetLeft - obj2.offsetLeft;
+			var b = obj1.offsetTop - obj2.offsetTop;
+			return Math.sqrt(a*a+b*b)
+		}
+		// 4.鼠标抬起之后交换碰撞成功的两个li
+		
+		
+	</script>
+</body>
+</html>

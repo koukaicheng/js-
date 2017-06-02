@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#photo{
+			width: 680px;
+			margin: 100px auto;
+		}
+		#photo ul{
+			/*overflow: hidden;*/
+		}
+		#photo ul li{
+			list-style: none;
+			width: 200px;
+			height: 200px;
+			float: left;
+			margin: 10px;
+		}
+		#photo ul li img{
+			width: 100%;
+			height: 100%;
+		}
+		</style>
+	</head>
+	<body>
+		<div id="photo">
+		<ul>
+			<li><img src="images/1.jpg" alt=""></li>
+			<li><img src="images/2.jpg" alt=""></li>
+			<li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.jpg" alt=""></li>
+			<li><img src="images/5.jpg" alt=""></li>
+			<li><img src="images/6.jpg" alt=""></li>
+			<li><img src="images/7.jpg" alt=""></li>
+			<li><img src="images/8.jpg" alt=""></li>
+			<li><img src="images/9.jpg" alt=""></li>
+		</ul>
+	</div>
+	</body>
+	<script type="text/javascript">
+		 var aLi  = document.getElementsByTagName("li");
+		var arr = [];//存储li的偏移量
+		for(var i = 0,l=aLi.length;i<l;i++){
+          arr.push([aLi[i].offsetLeft,aLi[i].offsetTop]);
+		}
+//		console.log(arr);
+		for(var i = 0,l=aLi.length;i<l;i++){
+          aLi[i].style.position = "absolute";
+          aLi[i].style.left = arr[i][0] + "px";
+          aLi[i].style.top = arr[i][1] + "px";
+           aLi[i].style.margin = 0;
+
+		}
+		for(var i = 0,l=aLi.length;i<l;i++){
+//        drag(aLi[i])
+          aLi[i].onclick = function(){
+          	console.log(this);
+          }
+		}
+		function drag(obj){
+			obj.onmousedowm = function(){
+				console.log(this);
+//				var ev = ev||window.event;
+//              var x = ev.clientX;
+//              var y = ev.clientY;
+//              // 获取li的初始位置
+//              var l = this.offsetLeft;
+//              var t = this.offsetTop;
+//              console.log(l);
+//              // 鼠标移动过程中
+//              document.onmousemove = function(ev){
+//              	var ev = ev||window.event;
+//              	// li的新位置
+//              	alert("lllllllllllll")
+//              	var _left = ev.clientX - x + l;
+//              	var _top = ev.clientY - y + t;
+//              	obj.style.left = _left+"px";
+//              	obj.style.top = _top + "px";
+//              };
+//              document.onmouseup  = function(){
+//              	 document.onmousemove = null;
+//              	 document.onmouseup  = null;
+//              	
+//              };
+//               return false
+			}
+		}
+	</script>
+</html>
