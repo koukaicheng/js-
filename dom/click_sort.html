@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style type="text/css">
+        select{
+            width: 150px;
+            height: 200px;
+            background:#155545;
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <select name="" id="sel1" size="10">
+        <option value="0">1香蕉</option>
+        <option value="1">2苹果</option>
+        <option value="2">3鸭梨</option>
+        <option value="3">4葡萄</option>
+    </select>
+
+    <input type="button" value=">>>"/>
+    <input type="button" value="<<<"/>
+    <input type="button" value=">"/>
+    <input type="button" value="<"/>
+    <select name="" id="sel2" size="10" multiple></select>
+
+    <script type="text/javascript">
+      var btn = document.getElementsByTagName('input');
+      var sel1 = document.getElementById('sel1');
+      var sel2 = document.getElementById('sel2');
+
+      btn[0].onclick = function() {
+       fn1(sel1,sel2)
+      }
+      btn[1].onclick = function() {
+        fn1(sel2,sel1)
+      }
+      btn[2].onclick = function(){
+       fn2(sel1,sel2)
+      }
+      btn[3].onclick = function(){
+        fn2(sel2,sel1)
+      }
+
+
+      function fn1(sels1,sels2){
+       var arr = sels1.children;
+        if(arr.length!==0){
+           for(var i  = arr.length-1;i>=0;i--){
+             arr[i].selected=false;
+              sels2.appendChild(arr[0]);
+            }
+
+       }else{
+              alert("为空");
+        }
+     }
+      function fn2(sels1,sels2){
+           var arr = sels1.children;
+           if(arr.length!==0){
+              for(var i = arr.length-1;i>=0;i--){
+               if(arr[i].selected===true){
+                 arr[i].selected=false;
+                   sels2.appendChild(arr[i])
+                }
+              }
+               //获取sel2中的子元素变成真数组，然后排序
+              var aaa = Array.from(sel2.children).sort(function (a,b) {
+                  return a.value-b.value;
+              });
+              //删除素有子元素
+              for(var i=0;i<sel2.children.length;i++){
+                  sel2.removeChild(sel2.children[i]);
+              }
+              //把排好序的数组添加到sel2中
+              for(var i=0;i<aaa.length;i++){
+                  sel2.appendChild(aaa[i]);
+              }
+            }else{
+              alert("为空");
+            }
+       }
+    </script>
+</body>
+</html>
