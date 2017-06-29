@@ -12,4 +12,4 @@
 
 ## 项目截图
   
-  <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161713.png" width="20%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161750.png" width="20%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161832.png" width="20%"/>&nbsp;&nbsp;
+  <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161713.png" width="30%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161750.png" width="30%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161832.png" width="30%"/>&nbsp;&nbsp;
