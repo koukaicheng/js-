@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>动画</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #box{
+      width: 200px;
+      height: 200px;
+      background: red;
+      position: relative;
+      left: -200px;
+      top: 100px;
+
+    }
+    #box span{
+     position: absolute;
+     left: 200px;
+     top: 80px;
+     display: inline-block;
+     width: 20px;
+     /*height: 30px;*/
+     background: green;
+    }
+  </style>
+</head>
+<body>
+   <div id="box">
+      <span>分享</span>
+   </div>
+
+   <script>
+      window.onload = function(){
+        var box =document.getElementById('box');
+        box.onmouseover = function (){
+          animite(0);
+        }
+        box.onmouseout = function (){
+          animite(-200);
+        }
+      }
+      var timer = null;
+      function animite(iterg){
+         clearInterval(timer);
+       var box =document.getElementById('box');    
+       var speed;
+       if(box.offsetLeft>iterg){
+          speed = -10
+       }else{
+          speed = 10
+       }
+       timer =setInterval(function(){
+          if(box.offsetLeft==iterg){
+            clearInterval(timer);
+          } else{
+            box.style.left = box.offsetLeft + speed +'px';
+          }
+       },20)
+      }
+   </script>
+</body>
+</html>

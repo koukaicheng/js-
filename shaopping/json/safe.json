@@ -1,0 +1,35 @@
+{
+	"data":[
+	        {
+    "dbType": "mysql",
+    "id": "1",
+    "image": "images/safe1.jpg",
+    "isNewId": false,
+    "name": "健康随e保重疾保险",
+    "price": 60,
+    "produce": "明星产品 | 防癌、42种疾病可选",
+    "status": "0",
+    "title": "健康险"
+},
+{
+    "dbType": "mysql",
+    "id": "2",
+    "image": "images/safe2.jpg",
+    "isNewId": false,
+    "name": "健康人生重疾保险",
+    "price": 600,
+    "produce": "50种重大疾病 | 附加15种轻症 | 轻症豁免",
+    "status": "0",
+    "title": "健康险"
+},
+{
+    "dbType": "mysql",
+    "id": "3",
+    "image": "images/safe3.jpg",
+    "isNewId": false,
+    "name": "健康人生重疾保险C款",
+    "price": 500,
+    "produce": "50种重大疾病 | 价格低至冰点",
+    "status": "0",
+    "title": "健康险"
+}]}

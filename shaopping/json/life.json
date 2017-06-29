@@ -1,0 +1,24 @@
+{
+	"data":[
+	        {
+    "dbType": "mysql",
+    "id": "1",
+    "image": "images/life1.png",
+    "isNewId": false,
+    "name": "大白定期人寿保险",
+    "price": 30,
+    "produce": "极致性价比 | 含全残 | 最高保额100万",
+    "status": "0",
+    "title": "寿险"
+},
+{
+    "dbType": "mysql",
+    "id": "2",
+    "image": "images/life2.png",
+    "isNewId": false,
+    "name": "定寿及重疾保障计划",
+    "price": 177,
+    "produce": "0-50岁 | 保障一年 | 可续保至65周岁",
+    "status": "0",
+    "title": "寿险"
+}]}

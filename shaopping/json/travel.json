@@ -1,0 +1,34 @@
+{
+	"data":[
+	        {
+    "dbType": "mysql",
+    "id": "1",
+    "image": "images/travel1.png",
+    "isNewId": false,
+    "name": "航空意外保险",
+    "price": 0.5,
+    "produce": "节假日补偿 | 拖车、快修、换胎服务",
+    "status": "0",
+    "title": "旅游"
+},
+{
+    "dbType": "mysql",
+    "id": "2",
+    "image": "images/travel2.png",
+    "isNewId": false,
+    "name": "自驾车保险计划",
+    "price": 10,
+    "status": "0",
+    "title": "旅游"
+},
+{
+    "dbType": "mysql",
+    "id": "3",
+    "image": "images/travel3.png",
+    "isNewId": false,
+    "name": "户外特惠计划",
+    "price": 1.2,
+    "produce": "保障全面 | 含高风险责任 | 救援服务",
+    "status": "0",
+    "title": "旅游"
+}]}

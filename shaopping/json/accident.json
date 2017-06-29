@@ -1,0 +1,34 @@
+{
+	"data":[
+	        {
+    "dbType": "mysql",
+    "id": "1",
+    "image": "images/accident1.png",
+    "isNewId": false,
+    "name": "运动意外保险(一年期)",
+    "price": 134,
+    "produce": "篮球、足球.. | 骨折 | 住院津贴",
+    "status": "0",
+    "title": "意外险"
+},
+{
+    "dbType": "mysql",
+    "id": "2",
+    "image": "images/accident1.png",
+    "isNewId": false,
+    "name": "运动意外保险",
+    "price": 1.9,
+    "produce": "保障各类运动 | 含骨折、猝死责任",
+    "status": "0"
+},
+{
+    "dbType": "mysql",
+    "id": "3",
+    "image": "images/accident2.png",
+    "isNewId": false,
+    "name": "最全交通工具保险",
+    "price": 0,
+    "produce": "航空、火车、客运、自驾...",
+    "status": "0",
+    "title": "意外险"
+}]}

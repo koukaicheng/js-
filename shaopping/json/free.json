@@ -1,0 +1,24 @@
+{
+	"data":[
+	        {
+    "dbType": "mysql",
+    "id": "1",
+    "image": "images/free1.png",
+    "isNewId": false,
+    "name": "最全交通工具保险",
+    "price": 0,
+    "produce": "航空、火车、客运、自驾...",
+    "status": "0",
+    "title": "免费"
+},
+{
+    "dbType": "mysql",
+    "id": "2",
+    "image": "images/free1.png",
+    "isNewId": false,
+    "name": "火车意外保险",
+    "price": 0,
+    "produce": "50万保障 | 免费领取",
+    "status": "0",
+    "title": "免费"
+}]}
