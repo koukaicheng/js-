@@ -8,3 +8,8 @@
  
  用到的技术： MUI框架，懒加载，左右滑动效果，跟后台合作，设计jsonp格式获取数据，如果后台没有开启服务超过5秒，保险列表页面会自动从本地获取数据，从而加载
 
+
+
+## 项目截图
+  
+  <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161713.png" width="20%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161750.png" width="20%"/>&nbsp;&nbsp; <img src="https://github.com/koukaicheng/js-/blob/aa/shaopping/images/QQ%E6%88%AA%E5%9B%BE20170629161832.png" width="20%"/>&nbsp;&nbsp;
