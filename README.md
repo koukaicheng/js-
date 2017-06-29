@@ -4,3 +4,5 @@
 ##### [水果排序](http://htmlpreview.github.io/?https://github.com/koukaicheng/js-/blob/master/dom/Dom1/03-%E6%B0%B4%E6%9E%9C%E6%8E%92%E5%BA%8F%EF%BC%88%E7%BB%88%E6%9E%81%E7%89%88%EF%BC%89.html)
 ##### [MUI框架写的一个保险商城demo](http://htmlpreview.github.io/?https://github.com/koukaicheng/js-/blob/aa/shaopping/index.html)
 
+ 因为当时公司要接一个保险商城的移动端项目 所以项目经理让我和后台java做一个小demo出来，虽然最后没有被采纳，但是当时确实是用心做了，所以放到这里
+
