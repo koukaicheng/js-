@@ -1,0 +1,10 @@
+.impowerBox .title{
+    display: none;
+}
+.impowerBox .qrcode {
+    width: 200px !important;
+}
+.impowerBox .status{
+    background-color: #2F74E1 !important;
+    box-shadow: inset 0 5px 10px -5px #2F74E1, 0 1px 0 0 #2F74E1 !important;
+}
